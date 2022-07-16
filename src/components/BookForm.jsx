@@ -17,9 +17,10 @@ function BooksContainer() {
     event.preventDefault();
     if (author.trim() !== '' && title.trim() !== '') {
       dispatch(addBooks({
-        id: uuid(),
+        item_id: uuid(),
         author,
         title,
+        category: 'Fiction',
       }));
       addTitle('');
       addAuthor('');
