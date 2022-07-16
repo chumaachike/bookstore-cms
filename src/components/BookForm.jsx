@@ -1,11 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 as uuid } from 'uuid';
+import { addBooks } from '../redux/books/books';
 
 function BooksContainer() {
+  const [author, addAuthor] = useState('');
+  const [title, addTitle] = useState('');
+  const dispatch = useDispatch();
+  const changeTitle = (event) => {
+    addTitle(event.target.value);
+  };
+  const changeAuthor = (event) => {
+    addAuthor(event.target.value);
+  };
+  const submitBook = (event) => {
+    event.preventDefault();
+    if (author.trim() !== '' && title.trim() !== '') {
+      dispatch(addBooks({
+        id: uuid(),
+        author,
+        title,
+      }));
+      addTitle('');
+      addAuthor('');
+    }
+  };
   return (
-    <form>
+    <form onSubmit={submitBook}>
       <h3>ADD NEW BOOK</h3>
-      <input type="text" placeholder="Book Title" />
-      <input type="text" placeholder="Author" />
+      <input type="text" placeholder="Book Title" value={title} onChange={changeTitle} />
+      <input type="text" placeholder="Author" value={author} onChange={changeAuthor} />
       <button type="submit">Button</button>
     </form>
   );
