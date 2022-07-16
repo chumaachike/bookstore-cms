@@ -1,5 +1,5 @@
-h1{
-  color: #0290FF;
+h1 {
+  color: #0290ff;
   font-size: 2rem;
   font-weight: bold;
 }
@@ -17,9 +17,8 @@ ul {
   gap: 30px;
 }
 
-a{
+a {
   text-decoration: none;
   font-size: 1rem;
-  color: #5D5D5D;
-  font-size: 1rem;
+  color: #5d5d5d;
 }
