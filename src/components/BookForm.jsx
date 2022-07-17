@@ -28,14 +28,14 @@ function BooksContainer() {
     }
   };
   return (
-    <div className={styles.tyt}>
+    <>
       <h3 className={styles.formTitle}>ADD NEW BOOK</h3>
       <form className={styles.formContainer} onSubmit={submitBook}>
         <input type="text" className={styles.inputTextBox} placeholder="Book Title" value={title} onChange={changeTitle} />
         <input type="text" className={styles.inputTextBox} placeholder="Author" value={author} onChange={changeAuthor} />
         <button className={styles.addBookButton} type="submit">Button</button>
       </form>
-    </div>
+    </>
   );
 }
 

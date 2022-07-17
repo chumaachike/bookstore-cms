@@ -47,7 +47,6 @@ input {
 
 .books {
   list-style-type: none;
-  margin: 2rem 0;
   padding: 0;
   display: flex;
   flex-direction: column;

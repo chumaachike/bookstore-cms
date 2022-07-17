@@ -21,10 +21,11 @@ function BooksContainer() {
     />
   ));
   return (
-    <div>
+    <div className={styles.BookSetionContainer}>
       <ul className={styles.books}>
         {renderedItems}
       </ul>
+      <div className="horizontal-divider" />
       <BookForm />
     </div>
   );
